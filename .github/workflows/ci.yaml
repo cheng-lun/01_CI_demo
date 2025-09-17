@@ -1,21 +1,21 @@
-name: CI
+name: CI # workflow name
 
-on:
+on: # what actions will trigger CI
   workflow_dispatch:
   push:
   pull_request:
 
-jobs:
-  run_regression:
-    runs-on: ubuntu-latest
+jobs: # start to define test you want to do
+  run_regression: # job's name
+    runs-on: ubuntu-latest # Environment can be Linux, Windows or Mac
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repository # step's name
+        uses: actions/checkout@v4 # uses is the module like python import
 
       - name: Set up Python
         uses: actions/setup-python@v5
-        with:
+        with: # argument for module
           python-version: "3.11"
 
       - name: Install python module
@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest pandas openpyxl
 
-      - name: Run pytest
+      - name: Run pytest # pytest built-in command (pytest is a python module)
         run: |
           export PYTHONPATH=$(pwd)
           pytest -v -s
