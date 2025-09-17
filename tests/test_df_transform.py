@@ -19,4 +19,3 @@ def test_df(name, function, output_excel):
     output_df = pd.read_excel(output_excel)
     assert_frame_equal(golden_output, output_df, check_dtype=True, check_exact=True)
 
-    
