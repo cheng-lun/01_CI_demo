@@ -4,7 +4,6 @@ def add_new_column(df):
     df_new_col = df.copy()
     df_new_col['new_column'] = 'test'
 
-    return df_new_col
 
 
 def reverse_columns(df):
