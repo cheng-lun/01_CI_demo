@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  run regression:
+  run_regression:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +27,5 @@ jobs:
         run: |
           export PYTHONPATH=$(pwd)
           pytest -v -s
-          
           
           
